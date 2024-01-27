@@ -8,3 +8,15 @@
 
   }
 }
+
+body.light {
+  /* Light mode styles */
+  background-color: #ffffff;
+  color: #333333;
+}
+
+body.dark {
+  /* Dark mode styles */
+  background-color: #333333;
+  color: #ffffff;
+}
