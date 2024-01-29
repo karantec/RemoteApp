@@ -1,22 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+/* 
 @layer base{
   body{
     background: linear-gradient(to right, rgb(187, 247, 208), rgb(34, 197, 94));
 
   }
-}
+} */
 
-body.light {
-  /* Light mode styles */
-  background-color: #ffffff;
-  color: #333333;
-}
-
-body.dark {
-  /* Dark mode styles */
-  background-color: #333333;
-  color: #ffffff;
-}
