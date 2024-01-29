@@ -5,6 +5,7 @@ const Card = () => {
 
     const [datas,setdatas]=useState([]);
     const [currentPage, setCurrentPage] = useState(1);
+ 
 
     useEffect(()=>{
         axios.get('api/v1/getCompany')
@@ -17,6 +18,8 @@ const Card = () => {
             console.log(error);
         })
     })
+
+    
     // const skills = ["React", "Javascript", "HTML", "CSS"];
     const date1 = dayjs(Date.now());
     const datediff = date1.diff('2024-01-01', 'day');
@@ -63,6 +66,8 @@ const Card = () => {
                     </ul>
                 )}
             </div>
+            
+            
         </div>
     );
 }
