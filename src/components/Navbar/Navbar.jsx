@@ -1,6 +1,6 @@
 import  { useState } from 'react';
 
-const Index = () => {
+const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleNavbar = () => {
@@ -68,4 +68,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default Navbar;

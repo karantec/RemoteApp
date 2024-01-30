@@ -1,36 +1,26 @@
-import Navbar from "./components/Navbar"
 
-import Header from "./components/Header/Header"
-import Search from "./components/SearchBar/Search"
-import Card from "./components/JobCard/Card"
-import Footer from "./components/Footer/Footer";
+import { Route, Routes } from "react-router";
+import Home from "./components/Home/Home";
 import "./App.css";
+import Login from "./components/Log/Login";
+import Signup from "./components/Log/Signup";
+
 
 const App = () => {
 
   return (
     <div>
-    <div className="area">
-			<ul className="circles">
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-        </ul>
-        </div>
-  <Navbar/>
- 
-  <Header/>
-  <Search/>
+    
+    
+        <Routes>
+        <Route path="/login" element={<Login/>}/>
+        <Route path="/Signup" element={<Signup/>}/>
+        <Route  exact path="/" element={<Home/>}/>
+    
+        </Routes>
+      
+    
   
-  <Card/>
-  <Footer/>
   </div>
   )
 }
