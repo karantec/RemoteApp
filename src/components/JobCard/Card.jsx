@@ -1,11 +1,14 @@
 import dayjs from "dayjs";
 import { useEffect, useState } from "react";
-import axios from "axios";
+import axios from "axios"; 
+
 const Card = () => {
 
+
     const [datas,setdatas]=useState([]);
+    
     const [currentPage, setCurrentPage] = useState(1);
- 
+    
 
     useEffect(()=>{
         axios.get('api/v1/getCompany')
@@ -29,7 +32,7 @@ const Card = () => {
 
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
-
+  
     return (
         <div className="mx-4 mb-4 md:mx-40">
         
@@ -47,7 +50,9 @@ const Card = () => {
                         </div>
                         <div className="flex md:items-center gap-2 mt-4 md:mt-0">
                             <p className="text-gray-500 text-sm md:text-base">Posted {datediff} days ago</p>
-                          <a href={data.ApplyLink}>  <button className="text-blue-500 border border-blue-500 px-4 md:px-6 py-2 rounded-md">Apply</button></a>
+                           
+                          <a href={data.ApplyLink}>  <button className="text-blue-500 border border-blue-500 px-4 md:px-6 py-2 rounded-md"
+                          >Apply</button></a>
                         </div>
                     </div>
                 </div>

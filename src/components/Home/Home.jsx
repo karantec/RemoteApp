@@ -3,8 +3,15 @@ import Header from "../Header/Header"
 import Search from "../SearchBar/Search"
 import Card from "../JobCard/Card"
 import Footer from "../Footer/Footer"
+
 import "./Home.css";
+
+// const auth=getAuth(app);
+
 const Home = () => {
+
+ 
+  
   return (
     <div>
 <div className="area">
@@ -25,7 +32,7 @@ const Home = () => {
      <Header/>
     <Search/>
   
-  <Card/>
+    <Card />
   <Footer/>
     </div>
   )
