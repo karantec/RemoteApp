@@ -1,13 +1,24 @@
 import dayjs from "dayjs";
 import { useEffect, useState } from "react";
-import axios from "axios"; 
-
+import { useNavigate} from "react-router-dom";
+import axios from "axios";
+import { auth } from "../../../firebase";
 const Card = () => {
+    const navigate=useNavigate();
+    
+// Add prop validation for 'isLoggedIn'
 
 
+
+ 
+   // State to store the company data
+  
+  
     const [datas,setdatas]=useState([]);
     
     const [currentPage, setCurrentPage] = useState(1);
+    
+    
     
 
     useEffect(()=>{
@@ -31,7 +42,21 @@ const Card = () => {
     const currentData = datas.slice(indexOfFirstData, indexOfLastData);
 
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
-
+    
+    const handleApply = (applyLink) => {
+        console.log("Apply button clicked");
+        if (auth.currentUser) {
+            if (applyLink) {
+                window.location.href = applyLink;
+            } else {
+                alert("No Apply Link found for this job.");
+            }
+        } else {
+            console.log("No user logged in, redirecting to login page");
+            localStorage.setItem("applyLink", applyLink);
+            navigate("/Signup"); // Redirect to login page
+        }
+    }
   
     return (
         <div className="mx-4 mb-4 md:mx-40">
@@ -50,9 +75,13 @@ const Card = () => {
                         </div>
                         <div className="flex md:items-center gap-2 mt-4 md:mt-0">
                             <p className="text-gray-500 text-sm md:text-base">Posted {datediff} days ago</p>
-                           
-                          <a href={data.ApplyLink}>  <button className="text-blue-500 border border-blue-500 px-4 md:px-6 py-2 rounded-md"
-                          >Apply</button></a>
+                          
+                               <button className="text-blue-500 border border-blue-500 px-4 md:px-6 py-2 rounded-md"
+                                onClick={() => handleApply(data.ApplyLink)}
+                              >
+                            Apply 
+                            </button> 
+       
                         </div>
                     </div>
                 </div>

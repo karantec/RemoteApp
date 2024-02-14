@@ -31,7 +31,7 @@ const Home = () => {
     <Navbar/>
      <Header/>
     <Search/>
-  
+    
     <Card />
   <Footer/>
     </div>

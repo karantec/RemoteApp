@@ -5,42 +5,34 @@ import {signInWithEmailAndPassword, getAuth, GoogleAuthProvider, signInWithPopup
 import { useState } from "react";
 import {app} from "../../../firebase.js";
 import { useNavigate } from "react-router-dom";
+
 // import { toast, ToastContainer } from "react-toastify";
 // import "react-toastify/dist/ReactToastify.css";
 const auth = getAuth(app);
 const googleAuthProvider = new GoogleAuthProvider();
-const Login = ( { onLoginSuccess }) => {
-  const [loggedIn , setLoggedIn] = useState(false);
-
+const Login = ( ) => {
+ 
   const [email,setEmail]=useState("");
   const [password,setPassword]=useState("");
   const navigate = useNavigate();
+  const [redirectUrl, setRedirectUrl] = useState("");
 
   const Sign = () => {
     signInWithEmailAndPassword(auth, email, password)
       .then(() => {
-        setLoggedIn(true);
-     // Call the onLoginSuccess function passed from the parent component
-      onLoginSuccess();
-    // Redirect to the Home page upon successful login
-      navigate("/");
+        // Redirect to the stored redirect URL upon successful login
+        navigate(redirectUrl || "/"); // Navigate to the target URL or the home page
       })
       .catch((error) => {
-        // Handle errors here
-        console.error("Error creating user:", error.message);
-        // toast.error("Error creating user: " + error.message);
+        console.error("Error signing in:", error.message);
       });
   };
+
   const signInWithGoogle = () => {
     signInWithPopup(auth, googleAuthProvider)
       .then(() => {
-        setLoggedIn(true);
-        // Call the onLoginSuccess function passed from the parent component
-        onLoginSuccess();
-        // Redirect to the Home page upon successful login
-        navigate("/");
-        
-       
+        // Redirect to the stored redirect URL upon successful login
+        navigate(redirectUrl || "/"); // Navigate to the target URL or the home page
       })
       .catch((error) => {
         console.error("Error signing in with Google:", error.message);
