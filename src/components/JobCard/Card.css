@@ -1,5 +1,5 @@
 .area {
-    background: #4e54c8;
+    background: #30cc5c;
     background: -webkit-linear-gradient(to left, #b2fe86, #78e685);
     width: 100%;
     height: 100vh; /* Change to 100vh to cover the entire viewport height */
@@ -24,7 +24,7 @@
 	list-style: none;
 	width: 20px;
 	height: 20px;
-	background: rgba(255, 255, 255, 0.2);
+	background: #30cc5c;
 	animation: animate 25s linear infinite;
 	bottom: -150px;
 }

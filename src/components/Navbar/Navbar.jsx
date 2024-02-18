@@ -1,70 +1,59 @@
 import  { useState } from 'react';
-
+import {Link} from "react-router-dom"
 const Navbar = () => {
-  
-  const [isOpen, setIsOpen] = useState(false);
+  // State to manage the visibility of the menu on small screens
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleNavbar = () => {
-    setIsOpen(!isOpen);
+
+  // Function to toggle the menu
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
   };
 
   return (
     <div>
-      <header className="mt-5 inset-x-0 top-0 z-30 mx-auto w-full max-w-screen-md border border-gray-100 bg-white/80 py-3 shadow backdrop-blur-lg md:top-6 md:rounded-3xl lg:max-w-screen-lg">
-        <div className="px-4">
-          <div className="flex items-center justify-between">
-            <div className="flex shrink-0">
-              <a aria-current="page" className="flex items-center" href="/">
-                <img className="h-7 w-auto" src="https://letscodejobs.in/wp-content/uploads/2023/10/cropped-cropped-cropped-logo2-1-1.png" alt="" />
-                <p className="mx-4 font-bold text-black">RemoteNaukri</p>
-              </a>
-            </div>
+      <nav className="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 mb-10 border-b border-gray-200 dark:border-gray-600">
+        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+          <a href="https://letscodejobs.in/wp-content/uploads/2024/02/cropped-cropped-logo2-3.png" className="flex items-center space-x-3 rtl:space-x-reverse">
+            <img src="https://letscodejobs.in/wp-content/uploads/2024/02/cropped-cropped-logo2-3.png" className="h-8" alt="Flowbite Logo" />
+            <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">LetScode</span>
+          </a>
+          <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+           <Link to="/Login"> <button type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Login</button></Link>
             <button
-              onClick={toggleNavbar}
-              className="md:hidden block"
+              onClick={toggleMenu}
+              type="button"
+              className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+              aria-controls="navbar-sticky"
+              aria-expanded={isMenuOpen ? "true" : "false"}
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                {isOpen ? (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                ) : (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16m-7 6h7"
-                  />
-                )}
+              <span className="sr-only">Open main menu</span>
+              <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15" />
               </svg>
             </button>
-            <nav className={`md:flex md:items-center md:justify-center md:gap-5 ${isOpen ? 'block' : 'hidden'}`}>
-              <a aria-current="page"
-                className="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
-                href="#">Home</a>
-              <a className="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
-                href="#">Referral Jobs</a>
-              <a className="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
-                href="#">Resources</a>
-            </nav>
-            <div className="flex items-center justify-end gap-3">
-              <a className="hidden items-center justify-center rounded-xl bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 transition-all duration-150 hover:bg-gray-50 sm:inline-flex"
-                href="/signup">Sign up</a>
-              <a className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-3 py-2 text-sm font-semibold text-white shadow-sm transition-all duration-150 hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
-                href="/login">Login</a>
-            </div>
+          </div>
+          <div className={`items-center justify-between w-full md:flex md:w-auto md:order-1 ${isMenuOpen ? '' : 'hidden'}`} id="navbar-sticky">
+            <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+              <li>
+                <a href="#" className="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500" aria-current="page">Home</a>
+              </li>
+              <li>
+                <a href="#" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
+              </li>
+              <li>
+                <a href="#" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Services</a>
+              </li>
+              <li>
+                <a href="#" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
+              </li>
+              <li>
+                <a href="/Resource" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Resource</a>
+              </li>
+            </ul>
           </div>
         </div>
-      </header>
+      </nav>
     </div>
   );
 };

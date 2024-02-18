@@ -5,7 +5,7 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    
+     
     extend: {
       keyframes: {
         typing: {
@@ -26,6 +26,13 @@ export default {
           }
         }
       },
+      fontSize: {
+        sm: ['14px', '20px'],
+        base: ['16px', '24px'],
+        lg: ['20px', '28px'],
+        xl: ['24px', '32px'],
+      },
+      
       animation: {
         typing: "typing 4s steps(20) infinite alternate, blink .7s infinite"
       }

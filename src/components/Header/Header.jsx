@@ -1,11 +1,19 @@
+import "./Header.css";
+import Counter from "./Counter";
 const Header = () => {
-    return (
-      <div className="mt-10 mx-4 md:mx-40 flex flex-col gap-5 items-center justify-center text-bold">
-        <h1 className="text-4xl md:text-4xl font-bold text-center animate-typing overflow-hidden whitespace-nowrap border-r-4 border-r-white pr-5  text-white">Your Ideal Job Awaits. </h1>
-        <p className="text-xl md:text-3xl  text-white font-bold font-serif animate-bounce animate-infinite animate-ease-in">Get Latest Job Remote Openings</p>
-      </div>
-    );
-  }
-  
-  export default Header;
-  
+  return (
+    <div className="header-container mb-8 bg-cover  py-6 bg-center h-400px flex flex-col justify-center items-center mb-">
+      <div className="mt-24 mx-4 md:mx-40 flex flex-col gap-5 items-center justify-center text-bold">
+      <Counter/>
+      <p className="text-4xl md:text:4xl md:mt-6 md:top-6 text-center mt-6 text-black font-bold font-sans animate-bounce animate-infinite animate-ease-in">
+        Your next career move is just a click away....
+        </p>
+        
+       
+        
+      </div> 
+    </div>
+  );
+}
+
+export default Header;

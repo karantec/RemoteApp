@@ -5,7 +5,8 @@
     width: 100%;
     height: 100%;
     z-index: -1;
-    background: linear-gradient(to right, #8f94fb, #4e54c8);
+    background-color: #30cc5c;
+    /* background: linear-gradient(to right, #1161ec, #DEE1E6); */
 }
 
 .circles {

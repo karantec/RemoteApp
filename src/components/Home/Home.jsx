@@ -1,6 +1,6 @@
 import Navbar from "../Navbar/Navbar"
 import Header from "../Header/Header"
-import Search from "../SearchBar/Search"
+
 import Card from "../JobCard/Card"
 import Footer from "../Footer/Footer"
 
@@ -30,7 +30,7 @@ const Home = () => {
         </div>
     <Navbar/>
      <Header/>
-    <Search/>
+    
     
     <Card />
   <Footer/>
