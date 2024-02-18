@@ -1,8 +1,17 @@
+import Navbar from "../Navbar/Navbar";
+import Footer from "../Footer/Footer";
+
+import BlogCard from "./BlogCard/BlogCard";
 
 const Resource = () => {
   return (
-    <div>Resource</div>
-  )
-}
+    <div>
+      <Navbar />
+      
+      <BlogCard/>
+      <Footer />
+    </div>
+  );
+};
 
-export default Resource
+export default Resource;
