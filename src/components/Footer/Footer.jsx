@@ -35,7 +35,7 @@ const Footer = () => {
 
     <div className="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-32">
       <div className="mx-auto max-w-sm lg:max-w-none">
-        <p className="mt-4 text-center text-gray-500 lg:text-left lg:text-lg dark:text-gray-400">
+        <p className="mt-4 text-center text-black  lg:text-left lg:text-lg dark:text-gray-400">
         As the Lets Code community, our unwavering mission is to empower and support every job seeker and tech enthusiast on their journey towards success. We strive to be a beacon of knowledge, sharing regular updates, opportunities, and resources that will elevate their skills and careers.
         </p>
 

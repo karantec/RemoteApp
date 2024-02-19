@@ -1,12 +1,10 @@
 
 
-import {signInWithEmailAndPassword, getAuth, GoogleAuthProvider, signInWithPopup} from "firebase/auth";
-
+import {createUserWithEmailAndPassword, getAuth,GoogleAuthProvider ,signInWithPopup} from "firebase/auth";
 import { useState } from "react";
 import {app} from "../../../firebase.js";
 import { useNavigate } from "react-router-dom";
-
-// import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 // import "react-toastify/dist/ReactToastify.css";
 const auth = getAuth(app);
 const googleAuthProvider = new GoogleAuthProvider();
@@ -17,17 +15,18 @@ const Login = ( ) => {
   const navigate = useNavigate();
   const [redirectUrl, setRedirectUrl] = useState("");
 
-  const Sign = () => {
-    signInWithEmailAndPassword(auth, email, password)
+  const createUser = () => {
+    createUserWithEmailAndPassword(auth, email, password)
       .then(() => {
-        // Redirect to the stored redirect URL upon successful login
-        navigate(redirectUrl || "/"); // Navigate to the target URL or the home page
+        toast.success("User Successfully Created");
+        navigate("/"); 
       })
       .catch((error) => {
-        console.error("Error signing in:", error.message);
+        // Handle errors here
+        console.error("Error creating user:", error.message);
+        toast.error("Error creating user: " + error.message);
       });
   };
-
   const signInWithGoogle = () => {
     signInWithPopup(auth, googleAuthProvider)
       .then(() => {
@@ -81,7 +80,7 @@ const Login = ( ) => {
         <div className="text-center md:text-left">
           <button
             className="mt-4 bg-blue-600 hover:bg-blue-700 px-4 py-2 text-white uppercase rounded text-xs tracking-wider"
-            type="submit" onClick={Sign}>
+            type="submit" onClick={createUser}>
             Login
           </button>
         </div>

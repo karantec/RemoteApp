@@ -10,24 +10,43 @@ const Card = () => {
     const [datas, setDatas] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [searchQuery, setSearchQuery] = useState("");
+    const [user, setUser] = useState(null);
     
     useEffect(() => {
-        // Simulating fetching user data from a placeholder database (JSON file)
         const fetchData = async () => {
-          try {
-            // Fetch data from a local JSON file (replace with your API endpoint)
-            const response = await fetch('http://localhost:8000/api/v1/getCompany');
-            const userData = await response.json();
-            console.log(userData);
-            setDatas(userData.data);
-          } catch (error) {
-            console.error('Error fetching user data:', error);
-          }
+            try {
+                const response = await fetch('http://localhost:8000/api/v1/getCompany');
+                const userData = await response.json();
+                setDatas(userData.data);
+            } catch (error) {
+                console.error('Error fetching user data:', error);
+            }
         };
-    
+
         fetchData();
-      }, []);
-    
+
+        const unsubscribe = auth.onAuthStateChanged(user => {
+            setUser(user);
+        });
+
+        return () => unsubscribe();
+    }, []);
+
+    const handleApply = (applyLink) => {
+        if (!user) { // Check if user is not authenticated
+            localStorage.setItem("applyLink", applyLink);
+            navigate("/Login"); // Redirect to login page if user is not authenticated
+            return; // Exit the function to prevent further execution
+        }
+   
+        if (!applyLink) {
+            alert("This job application link is not available.");
+            return; // Exit the function if applyLink is not available
+        }
+
+        window.location.href = applyLink; // Redirect to the apply link
+    }
+
 
     const date1 = dayjs(Date.now());
     const datediff = date1.diff('2024-01-01', 'day');
@@ -46,20 +65,7 @@ const Card = () => {
 
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
-    const handleApply = (applyLink) => {
-        console.log("Apply button clicked");
-        if (auth.currentUser) {
-            if (applyLink) {
-                window.location.href = applyLink;
-            } else {
-                alert("Please Login to Apply for the Job");
-            }
-        } else {
-            console.log("No user logged in, redirecting to login page");
-            localStorage.setItem("applyLink", applyLink);
-            navigate("/Signup"); // Redirect to login page
-        }
-    }
+   
 
     const handleSearchChange = (event) => {
         setSearchQuery(event.target.value);
@@ -91,13 +97,21 @@ const Card = () => {
                             </div>
                             <div className="flex md:items-center gap-2 mt-4 md:mt-0">
                                 <p className="text-gray-500 text-sm md:text-base">Posted {datediff} days ago</p>
-                                
-                                <button
-                                    className="text-blue-500 border border-blue-500 px-4 md:px-6 py-2 rounded-md"
-                                    onClick={() => handleApply(data.ApplyLink)}
-                                >
-                                    Apply 
-                                </button> 
+                                {user ? (
+                                    <button
+                                        className={`text-blue-500 border border-blue-500 px-4 md:px-6 py-2 rounded-md`}
+                                        onClick={() => handleApply(data.ApplyLink)}
+                                    >
+                                        Apply 
+                                    </button>
+                                ) : (
+                                    <button
+                                        className={`text-blue-500 border border-blue-500 px-4 md:px-6 py-2 rounded-md cursor-not-allowed opacity-50`}
+                                        disabled={!user}
+                                    >
+                                        Login to Apply
+                                    </button>
+                                )}
                             </div>
                         </div>
                     </div>
