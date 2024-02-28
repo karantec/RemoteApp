@@ -14,10 +14,13 @@ const auth=getAuth(app);
 const Signup = () => {
   const [email,setEmail]=useState("");
   const [password,setPassword]=useState("");
+  const [name,setName]=useState("");
+  const [phoneNumber,setphoneNumber]=useState("");
+  
   const navigate = useNavigate();
 
   const createUser = () => {
-    createUserWithEmailAndPassword(auth, email, password)
+    createUserWithEmailAndPassword(auth, email, password,phoneNumber,name)
       .then(() => {
         toast.success("User Successfully Created");
         navigate("/login"); 
@@ -49,6 +52,20 @@ const Signup = () => {
           onChange={(e)=>setEmail(e.target.value)}
           placeholder="Email Address"
         />
+         <input
+          className="text-sm  mt-2 w-full px-4 py-2 border border-solid border-gray-300 rounded"
+          type="text"
+          onChange={(e)=>setName(e.target.value)}
+          placeholder="Name"
+        />
+        <br/>
+         <input
+          className="text-sm  mt-2 w-full px-4 py-4 border border-solid border-gray-300 rounded"
+          type="text" 
+          onChange={(e)=>setphoneNumber(e.target.value)}
+          placeholder="Enter 10  digit Phone Number"
+        />
+        
         <input
           className="text-sm w-full px-4 py-2 border border-solid border-gray-300 rounded mt-4"
           type="password"  onChange={(e)=>setPassword(e.target.value)}
@@ -62,15 +79,7 @@ const Signup = () => {
           
      
         </div>
-        <div className="mt-4 font-semibold text-sm text-slate-500 text-center md:text-left">
-          Don&apos;t have an account?{" "}
-          <a
-            className="text-red-600 hover:underline hover:underline-offset-4"
-            href="#"
-          >
-            Register
-          </a>
-        </div>
+        
       </div>
     </section>
   );

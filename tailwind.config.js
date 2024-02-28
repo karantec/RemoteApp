@@ -13,6 +13,13 @@ export default {
             width: "0%",
             visibility: "hidden"
           },
+          fontFamily: {
+            'sans': ['Fira Sans', 'sans-serif'], // for descriptive content
+            'serif': ['Georgia', 'serif'], // for heading content
+          },
+          colors: {
+            custom: '#fff7cc',
+          },
           "100%": {
             width: "100%"
           }

@@ -1,8 +1,10 @@
 
 
-import {createUserWithEmailAndPassword, getAuth,GoogleAuthProvider ,signInWithPopup} from "firebase/auth";
+import {signInWithEmailAndPassword, getAuth,GoogleAuthProvider ,signInWithPopup} from "firebase/auth";
 import { useState } from "react";
 import {app} from "../../../firebase.js";
+
+import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 // import "react-toastify/dist/ReactToastify.css";
@@ -16,10 +18,10 @@ const Login = ( ) => {
   const [redirectUrl, setRedirectUrl] = useState("");
 
   const createUser = () => {
-    createUserWithEmailAndPassword(auth, email, password)
+    signInWithEmailAndPassword(auth, email, password)
       .then(() => {
         toast.success("User Successfully Created");
-        navigate("/"); 
+        navigate("/home"); 
       })
       .catch((error) => {
         // Handle errors here
@@ -51,8 +53,8 @@ const Login = ( ) => {
            
           <button
             type="button" 
-            className="inlne-block mx-1 h-9 w-9 rounded-full bg-blue-600 hover:bg-blue-700 uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca]" 
-            onClick={signInWithGoogle}> Google
+            className="inlne-block mx-1 h-15 w-12 rounded-full bg-blue-600 hover:bg-blue-700 uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca]" 
+            onClick={signInWithGoogle}> G
           </button>
         </div>
         <div className="my-5 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-neutral-300 after:mt-0.5 after:flex-1 after:border-t after:border-neutral-300">
@@ -86,7 +88,7 @@ const Login = ( ) => {
         </div>
         <div className="mt-4 font-semibold text-sm text-slate-500 text-center md:text-left">
           Don&apos;t have an account?{" "}
-        <button className="text-red-600 hover:underline hover:underline-offset-4"> Register</button>
+        <Link to="/Signup"><button className="text-red-600 hover:underline hover:underline-offset-4"> Register</button></Link>
           
         </div>
       </div>
