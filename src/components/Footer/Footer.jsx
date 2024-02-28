@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <div>
   
-<footer className="bg-white">
+<footer className="bg-white dark:bg-gray-900">
   <div className="mx-auto max-w-screen-xl px-4 pb-8 pt-16 sm:px-6 lg:px-8">
     <div className="mx-auto max-w-md">
       <strong className="block text-center text-xl font-bold text-gray-900 sm:text-3xl dark:text-white">
