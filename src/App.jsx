@@ -4,7 +4,6 @@ import Home from "./components/Home/Home";
 import Login from "./components/Log/Login";
 import Signup from "./components/Log/Signup";
 import Resource from "./components/Resources/Resource";
-// import ApplyCard from "./components/JobCard/ApplyCard";
 
 const App = () => {
   
@@ -13,7 +12,7 @@ const App = () => {
     <div>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login/>}></Route>
+        <Route path="/Login" element={<Login/>}></Route>
         <Route path="/Resource" element={<Resource/>}></Route>
         <Route  path="/signup"  element={<Signup/>}></Route>
       </Routes>

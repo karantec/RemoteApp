@@ -43,7 +43,7 @@ const Card = () => {
     const handleApply = (applyLink) => {
         if (!user) { // Check if user is not authenticated
             localStorage.setItem("applyLink", applyLink);
-            navigate("/Signup"); // Redirect to login page if user is not authenticated
+            navigate("/login"); // Redirect to login page if user is not authenticated
             return; // Exit the function to prevent further execution
         }
    

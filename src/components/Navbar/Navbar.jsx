@@ -46,13 +46,13 @@ const Navbar = () => {
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <a href="https://letscodejobs.in/wp-content/uploads/2024/02/cropped-cropped-logo2-3.png" className="flex items-center space-x-3 rtl:space-x-reverse">
             <img src="https://letscodejobs.in/wp-content/uploads/2024/02/cropped-cropped-logo2-3.png" className="h-8" alt="Flowbite Logo" />
-            <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Lets Remot</span>
+            <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Lets Remote</span>
           </a>
           <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
             {isLoggedIn ? (
               <button  className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" onClick={handleLogout}>Logout</button>
             ) : (
-              <Link to="/Signup">
+              <Link to="/Login">
                 <button type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                   Login
                 </button>
