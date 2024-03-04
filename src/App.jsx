@@ -4,7 +4,9 @@ import Home from "./components/Home/Home";
 import Login from "./components/Log/Login";
 import Signup from "./components/Log/Signup";
 import Resource from "./components/Resources/Resource";
-
+import About from "./components/About/About";
+import Contact from "./components/Contact/Contact";
+import Service from "./components/Services/Services";
 const App = () => {
   
 
@@ -13,6 +15,9 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Login" element={<Login/>}></Route>
+        <Route path="/About" element={<About/>}></Route>
+        <Route path="/contact" element={<Contact/>}></Route>
+        <Route path="/services" element={<Service/>}></Route>
         <Route path="/Resource" element={<Resource/>}></Route>
         <Route  path="/Signup"  element={<Signup/>}></Route>
       </Routes>

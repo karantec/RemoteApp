@@ -76,16 +76,16 @@ const Navbar = () => {
                <Link to="/" className="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500" >Home</Link>
               </li>
               <li>
-                <a href="#" className="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500">About</a>
+              <Link to="/About" className="block py-2 px-3 text-black bg-blue-700 rounded md:bg-transparent  md:p-0  ">About</Link>
               </li>
               <li>
-                <a href="#" className="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500">Services</a>
+                <Link to="/services" className="block py-2 px-3 text-black bg-blue-700 rounded md:bg-transparent  md:p-0 ">Services</Link>
               </li>
               <li>
-                <a href="#" className="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500">Contact</a>
+              <Link to="/contact" className="block py-2 px-3 text-black bg-blue-700 rounded md:bg-transparent  md:p-0  ">Contact</Link>
               </li>
               <li>
-                <Link to ="/Resource" className="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500">Resource</Link>
+                <Link to ="/Resource" className="block py-2 px-3 text-black bg-blue-700 rounded md:bg-transparent  md:p-0  ">Resource</Link>
               </li>
             </ul>
           </div>

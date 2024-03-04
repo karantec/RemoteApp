@@ -21,7 +21,7 @@ const Login = ( ) => {
     signInWithEmailAndPassword(auth, email, password)
       .then(() => {
         toast.success("User Successfully Created");
-        navigate("/home"); 
+        navigate("/"); 
       })
       .catch((error) => {
         // Handle errors here

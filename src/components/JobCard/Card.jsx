@@ -3,6 +3,7 @@ import dayjs from "dayjs";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../../../firebase";
 import Spinner from "../Spinner";
+import { GiSkills } from "react-icons/gi";
 import "./Card.css";
 
 const Card = () => {
@@ -95,10 +96,18 @@ const Card = () => {
                     <div key={data._id} className="my-4"> 
                     <div className="flex flex-col mt-3  text-md md:flex-row justify-between items-center px-4 md:px-6  lg:px-8 xl:px-10 py-4 rounded-lg border border-black  bg-white  card " style={{ backgroundColor: '#EFEADA' }}>
                             <div className="flex flex-col md:items-start gap-3">
-                                <h1 className="text-base font-semibold uppercase font-sans" style={{color:'#3399ff '}}>{data.CompanyName}<span className=" ml-6" style={{color:'#000000', fontFamily: 'Georgia, serif'}}>{data.Roles}</span> </h1>
-                                <p className="text-sm  lg:text-lg  font-bold" style={{color:'black'}}>Job-Type: {data.JobType}<br/> Experience: {data.Experience} <br/>Expected Salary : {data.ExpectedSalary} </p>
+                                <h1 className=" font-semibold font-sans"><span className="bg-blue-500  text-md w-11 rounded-full mr-4 ml-2 h-28 text-white  pt-3 pl-2 pb-4">{data.CompanyName}</span><span className="ml-6 bg-blue-500 w-15 rounded-full mr-4 h-28 text-white  pt-3 pl-2 pb-4" >{data.Roles}</span> </h1>
+                                <p className="text-sm  lg:text-lg mt-5 font-bold">
+                               <span className="text-sm  pl-4 flex items-center justify-between">Job-Type: {data.JobType}</span>
+                                </p>
+                                <p>Experience: {data.Experience} <br/>Expected Salary : {data.ExpectedSalary} </p>
+                                <div className="flex items-center ">
                                 <div className="flex items-center gap-2">
-                                    <p className="text-black font-bold text-sm " style={{color:'black'}}><span  style={{color:'#26AAF4'}}>Skills:</span> {data.Skills}</p>
+                                <p className="text-black font-bold mt-2 bg-green-500 text-sm rounded-full w-60 h-12 pt-2 pl-4 flex items-center justify-between px-4" style={{ color: 'white' }}>
+                                    <GiSkills className="text-white text-lg " />
+                                  <span className="ml-2 font-san text-1xl">Skills: {data.Skills}</span>
+                                 </p>
+                                </div>
                                 </div>
                             </div>
                             <div className="flex md:items-center gap-2 mt-4 md:mt-0">
