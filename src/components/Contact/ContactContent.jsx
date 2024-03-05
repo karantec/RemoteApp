@@ -1,5 +1,9 @@
-
-const ContactContent = () => {
+import { useForm} from '@formspree/react';
+const ContactContent = () => { 
+    const [state, handleSubmit] = useForm("xkndzwlk");
+    if (state.succeeded) {
+    return <p>Thanks for joining!</p>;
+}
   return (
     <>
     <section className="bg-blue-50 dark:bg-slate-800" id="contact">
@@ -49,7 +53,7 @@ const ContactContent = () => {
                 </div>
                 <div className="card h-fit max-w-6xl p-5 md:p-12" id="form">
                     <h2 className="mb-4 text-2xl font-bold">Ready to Get Started?</h2>
-                    <form id="contactForm">
+                    <form id="contactForm" onSubmit={handleSubmit}>
                         <div className="mb-6">
                             <div className="mx-0 mb-1 sm:mb-4">
                                 <div className="mx-0 mb-1 sm:mb-4">
