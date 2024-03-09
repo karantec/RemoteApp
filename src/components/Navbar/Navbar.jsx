@@ -82,7 +82,7 @@ const Navbar = () => {
                 <Link to="/services" className="block py-2 px-3 text-black  rounded md:bg-transparent  md:p-0 ">Services</Link>
               </li>
               <li>
-              <Link to="/contact" className="block py-2  pt-3 x-3 text-black  rounded md:bg-transparent  md:p-0  ">Contact</Link>
+              <Link to="/contact" className="block py-2 px-3 text-black  rounded md:bg-transparent  md:p-0 ">Contact</Link>
               </li>
               <li>
                 <Link to="/Resource" className="block py-2 px-3 text-black rounded md:bg-transparent  md:p-0  ">Resource</Link>

@@ -19,9 +19,11 @@ function Counter() {
   }, [count]);
 
   return (
-    <div>
-      <h1 className='text-6xl font-sans'> <span className="font-bold ">#{count}</span>   <span>Jobs Per Day</span></h1>
-    </div>
+    <div className="text-center md:text-left">
+  <h1 className="text-4xl md:text-6xl font-sans">
+    <span className="font-bold">#{count}</span> <span>Jobs Per Day</span>
+  </h1>
+</div>
   );
 }
 

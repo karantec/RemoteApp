@@ -1,60 +1,58 @@
-
-
-import {signInWithEmailAndPassword, getAuth,GoogleAuthProvider ,signInWithPopup} from "firebase/auth";
 import { useState } from "react";
-import {app} from "../../../firebase.js";
-
-import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { app } from "../../../firebase.js";
+import { FaGoogle } from 'react-icons/fa';
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-// import "react-toastify/dist/ReactToastify.css";
+
 const auth = getAuth(app);
 const googleAuthProvider = new GoogleAuthProvider();
-const Login = ( ) => {
- 
-  const [email,setEmail]=useState("");
-  const [password,setPassword]=useState("");
-  const navigate = useNavigate();
-  const [redirectUrl, setRedirectUrl] = useState("");
 
-  const createUser = () => {
+const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+
+  const handleSignIn = () => {
     signInWithEmailAndPassword(auth, email, password)
       .then(() => {
-        toast.success("User Successfully Created");
-        navigate("/"); 
+        toast.success("User Successfully Logged In");
+        navigate("/"); // Navigate to the home page upon successful login
       })
       .catch((error) => {
-        // Handle errors here
-        console.error("Error creating user:", error.message);
-        toast.error("Error creating user: " + error.message);
+        console.error("Error signing in:", error.message);
+        toast.error("Error signing in: " + error.message);
       });
   };
-  const signInWithGoogle = () => {
+
+  const handleGoogleSignIn = () => {
     signInWithPopup(auth, googleAuthProvider)
       .then(() => {
-        // Redirect to the stored redirect URL upon successful login
-        navigate(redirectUrl || "/"); // Navigate to the target URL or the home page
+        navigate("/"); // Navigate to the home page upon successful login
       })
       .catch((error) => {
         console.error("Error signing in with Google:", error.message);
+        toast.error("Error signing in with Google: " + error.message);
       });
   };
+
   return (
     <section className="h-screen flex flex-col md:flex-row justify-center space-y-10 md:space-y-0 md:space-x-16 items-center my-2 mx-5 md:mx-0 md:my-0">
       <div className="md:w-1/3 max-w-sm">
-      <img
+        <img
           src="Work.jpg"
           alt="Sample image"
         />
       </div>
       <div className="md:w-1/3 max-w-sm">
         <div className="text-center md:text-left">
-          <label className="mr-1">Sign in with </label>
-           
+          <label className="mr-1 text-2xl font-bold">Sign in with </label>
           <button
-            type="button" 
-            className="inlne-block mx-1 h-15 w-12 rounded-full bg-blue-600 hover:bg-blue-700 uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca]" 
-            onClick={signInWithGoogle}> G
+            type="button"
+            className="inline-flex items-center justify-center mx-1 h-20 w-20 rounded-full bg-red-600 hover:bg-blue-700 uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca]"
+            onClick={handleGoogleSignIn}
+          >
+            <FaGoogle className="text-2xl" />
           </button>
         </div>
         <div className="my-5 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-neutral-300 after:mt-0.5 after:flex-1 after:border-t after:border-neutral-300">
@@ -65,31 +63,33 @@ const Login = ( ) => {
         <input
           className="text-sm w-full px-4 py-2 border border-solid border-gray-300 rounded"
           type="text"
-          placeholder="Email Address" onChange={(e)=>setEmail(e.target.value)}
+          placeholder="Email Address"
+          onChange={(e) => setEmail(e.target.value)}
         />
         <input
           className="text-sm w-full px-4 py-2 border border-solid border-gray-300 rounded mt-4"
           type="password"
-          placeholder="Password" onChange={(e)=>setPassword(e.target.value)}
+          placeholder="Password"
+          onChange={(e) => setPassword(e.target.value)}
         />
         <div className="mt-4 flex justify-between font-semibold text-sm">
           <label className="flex text-slate-500 hover:text-slate-600 cursor-pointer">
             <input className="mr-1" type="checkbox" />
             <span>Remember Me</span>
           </label>
-         
         </div>
         <div className="text-center md:text-left">
           <button
             className="mt-4 bg-blue-600 hover:bg-blue-700 px-4 py-2 text-white uppercase rounded text-xs tracking-wider"
-            type="submit" onClick={createUser}>
+            type="submit"
+            onClick={handleSignIn}
+          >
             Login
           </button>
         </div>
         <div className="mt-4 font-semibold text-sm text-slate-500 text-center md:text-left">
           Don&apos;t have an account?{" "}
-        <Link to="/signup"><button className="text-red-600 hover:underline hover:underline-offset-4"> Register</button></Link>
-          
+          <Link to="/signup"><button className="text-red-600 hover:underline hover:underline-offset-4"> Register</button></Link>
         </div>
       </div>
     </section>
