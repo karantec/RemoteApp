@@ -241,7 +241,7 @@ const Footer = () => {
     </div>
 
     <div className="mt-16 border-t border-gray-100 pt-8 dark:border-gray-800">
-      <p className="text-center text-xs/relaxed text-gray-500 dark:text-gray-400">
+      <p className="text-center  text-2xl text-black dark:text-gray-400">
         © Company 2024. All rights reserved.
 
         <br />
@@ -249,7 +249,7 @@ const Footer = () => {
         Created with
         <a
           href="https://www.lets-code.co.in/about"
-          className="text-green-700  font-bold underline transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"
+          className="text-green-700   text-2xl font-bold underline transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"
           >Lets Code</a
         >
         
