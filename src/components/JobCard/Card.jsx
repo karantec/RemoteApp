@@ -1,7 +1,8 @@
 import  { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { auth } from '../../../firebase';
-import Spinner from '../Spinner/Spinner';
+import Spinner from '../Spinner';
+
 import './Card.css';
 
 const Card = () => {
