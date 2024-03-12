@@ -5,7 +5,8 @@ import { FaLinkedinIn } from "react-icons/fa";
 import { FaTelegramPlane } from "react-icons/fa";
 const Footer = () => {
   return (
-    <>
+    <div>
+    <div className="mt-2">
     <footer className="bg-white">
       <div className="mx-auto max-w-screen-xl px-4 pb-8 pt-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-md">
@@ -252,8 +253,8 @@ const Footer = () => {
     </div>
   </div>
 </footer>
-
-</>
+</div>
+</div>
   )
 }
 
