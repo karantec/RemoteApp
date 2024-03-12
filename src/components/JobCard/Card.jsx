@@ -1,9 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import dayjs from 'dayjs';
+import  { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { auth } from '../../../firebase';
-import Spinner from '../Spinner';
-import { GiSkills } from 'react-icons/gi';
+import Spinner from '../Spinner/Spinner';
 import './Card.css';
 
 const Card = () => {
@@ -56,9 +54,6 @@ const Card = () => {
         window.location.href = applyLink;
     };
 
-    const date1 = dayjs(Date.now());
-    const datediff = date1.diff('2024-01-01', 'day');
-
     const itemsPerPage = 8;
     const indexOfLastData = currentPage * itemsPerPage;
     const indexOfFirstData = indexOfLastData - itemsPerPage;
@@ -97,9 +92,9 @@ const Card = () => {
                 <div className="flex flex-wrap justify-center">
                     {currentData.map((data, index) => (
                         <div key={index} className="w-full sm:w-1/2 md:w-1/2 lg:w-2/4 xl:w-1/4 p-4">
-                            <div className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg  shadow-xl transition duration-300 hover:scale-105 dark:bg-gray-800 dark:border-gray-700">
-                                <h5 className="mb-2 text-2xl font-bold tracking-tight text-blue-600  dark:text-white">{data.CompanyName}</h5>
-                                <h5 className="mb-2 text-2xl font-bold tracking-tight text-orange-600 dark:text-white">{data.Roles}</h5>
+                            <div className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg  shadow-xl transition duration-300 hover:scale-105  dark:border-gray-700">
+                                <h5 className="mb-2 text-2xl font-bold tracking-tight text-blue-600  ">{data.CompanyName}</h5>
+                                <h5 className="mb-2 text-2xl font-bold tracking-tight text-blue-600 ">{data.Roles}</h5>
                                 <p className="mb-3   pl-3  bg-gray-300 rounded-lg font-bold text-black  ">{data.Location}</p>
                                 <p className="mb-3   pl-3 bg-gray-300 rounded-lg font-bold text-black  ">{data.Skills}</p>
                                 <p className="mb-3   pl-3 bg-gray-300 rounded-lg font-bold text-black  "> {data.Experience}</p>
@@ -124,14 +119,14 @@ const Card = () => {
                 <button
                     onClick={() => paginate(currentPage - 1)}
                     disabled={currentPage === 1}
-                    className="px-4 py-2 mr-2 text-sm font-medium text-gray-700 bg-gray-200 rounded-lg dark:text-gray-400 dark:bg-gray-600"
+                    className="px-4 py-2 text-sm font-medium text-white bg-blue-500 rounded-lg"
                 >
                     Previous
                 </button>
                 <button
                     onClick={() => paginate(currentPage + 1)}
                     disabled={indexOfLastData >= filteredData.length}
-                    className="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-200 rounded-lg dark:text-gray-400 dark:bg-gray-600"
+                    className="px-4 py-2 text-sm font-medium text-white bg-blue-500 rounded-lg"
                 >
                     Next
                 </button>

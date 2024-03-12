@@ -1,47 +1,40 @@
-import { FaSquareWhatsapp } from "react-icons/fa6";
-import { FaYoutube } from "react-icons/fa";
-import { FaLinkedinIn } from "react-icons/fa";
-import { FaTelegramPlane } from "react-icons/fa";
+
+import { FaSquareWhatsapp, FaYoutube, FaLinkedinIn, FaTelegramPlane } from "react-icons/fa";
+
 const Footer = () => {
   return (
-    <div>
+    <>
+    <footer className="bg-white">
+      <div className="mx-auto max-w-screen-xl px-4 pb-8 pt-16 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-md">
+          <strong className="block text-center text-xl font-bold text-gray-900 sm:text-3xl">
+            Would you like to stay updated with the latest blockbuster news delivered straight to your inbox?
+          </strong>
 
-<footer className="bg-white dark:bg-gray-900">
-  <div className="mx-auto max-w-screen-xl px-4 pb-8 pt-16 sm:px-6 lg:px-8">
-    <div className="mx-auto max-w-md">
-      <strong className="block text-center text-xl font-bold text-gray-900 sm:text-3xl dark:text-white">
-      Would you like to stay updated with the latest blockbuster news delivered straight to your inbox?
-      </strong>
-
-      <form className="mt-6">
-        <div className="relative max-w-lg">
-          <label className="sr-only"> Email </label>
-
-          <input
-            className="w-full rounded-full border-gray-200 bg-gray-100 p-4 pe-32 text-sm font-medium dark:border-gray-700 dark:bg-gray-800 dark:text-white"
-            id="email"
-            type="email"
-            placeholder="demo@gmail.com"
-          />
-
-          <button
-            className="absolute end-1 top-1/2 -translate-y-1/2 rounded-full bg-blue-600 px-5 py-3 text-sm font-medium text-white transition hover:bg-blue-700"
-          >
-            Subscribe
-          </button>
+          <form className="mt-6">
+            <div className="relative max-w-lg">
+              <label className="sr-only">Email</label>
+              <input
+                className="w-full rounded-full border-gray-200 bg-gray-100 p-4 pe-32 text-sm font-medium dark:border-gray-700 dark:bg-gray-800 dark:text-white"
+                id="email"
+                type="email"
+                placeholder="demo@gmail.com"
+              />
+              <button className="absolute end-1 top-1/2 -translate-y-1/2 rounded-full bg-blue-600 px-5 py-3 text-sm font-medium text-white transition hover:bg-blue-700">
+                Subscribe
+              </button>
+            </div>
+          </form>
         </div>
-      </form>
-    </div>
-
     <div className="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-32">
       <div className="mx-auto max-w-sm lg:max-w-none">
-        <p className="mt-4 text-center text-black  lg:text-left lg:text-lg dark:text-gray-400">
+        <p className="mt-4 text-center text-black  lg:text-left lg:text-lg ">
         As the Lets Code community, our unwavering mission is to empower and support every job seeker and tech enthusiast on their journey towards success. We strive to be a beacon of knowledge, sharing regular updates, opportunities, and resources that will elevate their skills and careers.
         </p>
 
         <div className="mt-6 flex justify-center gap-4 lg:justify-start">
           <a
-            className="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"
+            className="text-gray-700"
             href="https://www.facebook.com/letscodeforever"
             target="_blank"
             rel="noreferrer"
@@ -52,7 +45,7 @@ const Footer = () => {
           </a>
 
           <a
-            className="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"
+            className="text-gray-700"
             href="https://www.instagram.com/lets__code/"
             target="_blank"
             rel="noreferrer"
@@ -63,7 +56,7 @@ const Footer = () => {
           </a>
 
           <a
-            className="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"
+            className="text-gray-700"
             href="https://twitter.com/Lets__Code"
             target="_blank"
             rel="noreferrer"
@@ -78,7 +71,7 @@ const Footer = () => {
           </a>
 
           <a
-            className="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"
+            className="text-gray-700"
             href="#"
             target="_blank"
             rel="noreferrer"
@@ -88,7 +81,7 @@ const Footer = () => {
             <FaSquareWhatsapp fontSize={20}/>
           </a>
           <a
-            className="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"
+            className="text-gray-700"
             href="https://www.youtube.com/channel/UC8yrWVx-ezAW0jh8hlFUFUQ"
             target="_blank"
             rel="noreferrer"
@@ -98,7 +91,7 @@ const Footer = () => {
             <FaYoutube fontSize={20}/>
           </a>
           <a
-            className="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"
+            className="text-gray-700"
             href="https://www.linkedin.com/company/lets-code-forever"
             target="_blank"
             rel="noreferrer"
@@ -115,19 +108,19 @@ const Footer = () => {
           >
             <span className="sr-only"> Telegram</span>
 
-            <FaTelegramPlane fontSize={20}/>
+            <FaTelegramPlane fontSize={20} text-black/>
           </a>
         </div>
       </div>
 
       <div className="grid grid-cols-1 gap-8 text-center lg:grid-cols-3 lg:text-left">
         <div>
-          <strong className="font-medium text-gray-900 dark:text-white"> Company </strong>
+          <strong className="text-gray-700"> Company </strong>
 
           <ul className="mt-6 space-y-1">
             <li>
               <a
-                className="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"
+                className="text-gray-700"
                 href="https://www.lets-code.co.in/service"
               >
                 Services
@@ -136,7 +129,7 @@ const Footer = () => {
 
             <li>
               <a
-                className="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"
+                className="text-gray-700"
                 href="https://www.lets-code.co.in/community"
               >
                 Community
@@ -145,7 +138,7 @@ const Footer = () => {
 
             <li>
               <a
-                className="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"
+                className="text-gray-700"
                 href="https://www.lets-code.co.in/product"
               >
                 Products
@@ -154,7 +147,7 @@ const Footer = () => {
 
             <li>
               <a
-                className="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"
+                className="text-gray-700"
                 href="https://www.lets-code.co.in/about"
               >
                About
@@ -164,12 +157,12 @@ const Footer = () => {
         </div>
 
         <div>
-          <strong className="font-medium text-gray-900 dark:text-white"> Support </strong>
+          <strong className="font-medium text-black"> Support </strong>
 
           <ul className="mt-6 space-y-1">
             <li>
               <a
-                className="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"
+                className="text-gray-700"
                 href="#"
               >
                 Account
@@ -178,7 +171,7 @@ const Footer = () => {
 
             <li>
               <a
-                className="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"
+                className="font-medium text-gray-900 "
                 href="#"
               >
                 Help
@@ -187,7 +180,7 @@ const Footer = () => {
 
             <li>
               <a
-                className="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"
+                className="font-medium text-gray-900 "
                 href="#"
               >
                 Contacts
@@ -196,7 +189,7 @@ const Footer = () => {
 
             <li>
               <a
-                className="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"
+                className="font-medium text-gray-900 "
                 href="#"
               >
                 Customer Support
@@ -206,12 +199,12 @@ const Footer = () => {
         </div>
 
         <div>
-          <strong className="font-medium text-gray-900 dark:text-white"> Legals</strong>
+          <strong className="font-medium text-gray-900 "> Legals</strong>
 
           <ul className="mt-6 space-y-1">
             <li>
               <a
-                className="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"
+                className="text-gray-700"
                 href="#"
               >
                Terms & Condition
@@ -220,7 +213,7 @@ const Footer = () => {
 
             <li>
               <a
-                className="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"
+                className="text-gray-700"
                 href="#"
               >
                 Privacy Policy
@@ -229,7 +222,7 @@ const Footer = () => {
 
             <li>
               <a
-                className="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"
+                className="text-gray-700"
                 href="#"
               >
                 Licensing
@@ -241,7 +234,7 @@ const Footer = () => {
     </div>
 
     <div className="mt-16 border-t border-gray-100 pt-8 dark:border-gray-800">
-      <p className="text-center  text-2xl text-black dark:text-gray-400">
+      <p className="text-center  text-md text-black">
         © Company 2024. All rights reserved.
 
         <br />
@@ -249,7 +242,7 @@ const Footer = () => {
         Created with
         <a
           href="https://www.lets-code.co.in/about"
-          className="text-green-700   text-2xl font-bold underline transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"
+          className="text-green-700   text-2xl font-bold underline"
           >Lets Code</a
         >
         
@@ -257,7 +250,8 @@ const Footer = () => {
     </div>
   </div>
 </footer>
-</div>
+
+</>
   )
 }
 
