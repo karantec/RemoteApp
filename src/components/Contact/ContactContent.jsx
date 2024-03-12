@@ -12,7 +12,7 @@ const ContactContent = () => {
             <div className="mb-6 max-w-3xl text-center sm:text-center md:mx-auto md:mb-12">
               
                 <h2
-                    className="font-heading mb-4 font-bold tracking-tight text-gray-900 dark:text-white text-3xl sm:text-5xl">
+                    className="font-heading mb-4 font-bold tracking-tight text-gray-900  text-3xl sm:text-5xl">
                     Get in Touch
                 </h2>
                 <p className="mx-auto mt-4 max-w-3xl text-xl text-gray-600 dark:text-slate-400">Contact Us for any query
@@ -22,19 +22,19 @@ const ContactContent = () => {
         <div className="flex items-stretch justify-center">
             <div className="grid md:grid-cols-2">
                 <div className="h-full pr-6">
-                    <p className="mt-3 mb-12 text-lg text-gray-600 dark:text-slate-400">
+                    <p className="mt-3 mb-12 text-lg text-white ">
                     Join us on our journey to redefine the future of work. Whether you are a freelancer, a small business owner, or part of a large enterprise, LetsRemote is here to support you every step of the way. ut.
                     </p>
                     <ul className="mb-6 md:mb-0">
                         <li className="flex">
-                            <div className="flex h-10 w-10 items-center justify-center rounded bg-blue-900 text-gray-50">
+                            <div className="flex h-10 w-10 items-center justify-center rounded bg-blue-700 text-gray-50">
                                 
                             </div>
                             <div className="ml-4 mb-4">
                                 <h3 className="mb-2 text-lg font-medium leading-6 text-gray-900 dark:text-white">Our Address
                                 </h3>
                                 <p className="text-gray-600 dark:text-slate-400">New Delhi,Delhi</p>
-                                <p className="text-gray-600 dark:text-slate-400">Delhi</p>
+                               
                             </div>
                         </li>
                         <li className="flex">

@@ -36,10 +36,14 @@ const ServiceContent = () => {
                         </div>
                     </div>
                     <div className="mt-12 sm:mt-16 lg:mt-0">
-                        <div className="-mr-48 pl-6 md:-mr-16 lg:relative lg:m-0 lg:h-full lg:px-0">
-                            <img loading="lazy" width="647" height="486"
-                                className="w-full rounded-xl shadow-2xl ring-1 ring-black ring-opacity-5 lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
-                                style={{ color: 'transparent' }} src="https://desktime.com/blog/wp-content/uploads/2020/03/bloga-bildes-16.png" alt="NLP"/>
+                        <div className="-mr-48 pl-6  lg:relative lg:m-0 lg:h-full lg:px-0">
+                        <img loading="lazy"
+    className="w-full rounded-xl shadow-2xl ring-1 ring-black ring-opacity-5 lg:absolute lg:left-0 lg:h-auto lg:w-auto lg:max-w-none object-cover"
+    style={{ color: 'transparent', maxHeight: '100%', maxWidth: '100%' }}
+    src="https://desktime.com/blog/wp-content/uploads/2020/03/bloga-bildes-16.png"
+    alt="NLP" />
+
+
                         </div>
                     </div>
                 </div>
@@ -79,8 +83,8 @@ const ServiceContent = () => {
                     <div className="mt-12 sm:mt-16 lg:mt-0">
                         <div className="-ml-48 pr-6 md:-ml-16 lg:relative lg:m-0 lg:h-full lg:px-0">
                             <img alt="Inbox user interface" loading="lazy" width="647" height="486"
-                                className="w-full rounded-xl shadow-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:right-0 lg:h-full lg:w-auto lg:max-w-none"
-                                style={{ color: 'transparent' }} src="https://www.indiahires.in/wp-content/uploads/2023/11/Remote-Internships.webp" 
+                               className="w-full rounded-xl shadow-2xl ring-1 ring-black ring-opacity-5 lg:absolute lg:left-0 lg:h-auto lg:w-auto lg:max-w-none object-cover"
+    style={{ color: 'transparent', maxHeight: '100%', maxWidth: '100%' }} src="https://www.indiahires.in/wp-content/uploads/2023/11/Remote-Internships.webp" 
                                 />
                         </div>
                     </div>
@@ -124,8 +128,8 @@ const ServiceContent = () => {
                     <div className="mt-12 sm:mt-16 lg:mt-0">
                         <div className="-mr-48 pl-6 md:-mr-16 lg:relative lg:m-0 lg:h-full lg:px-0">
                             <img loading="lazy" width="646" height="485"
-                                className="w-full rounded-xl shadow-2xl ring-1 ring-black ring-opacity-5 lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
-                                style={{ color: 'transparent' }} src="https://analyticsindiamag.com/wp-content/uploads/2021/11/github-logo-768x373-1.jpeg" alt="NLG"/>
+                                className="w-full rounded-xl shadow-2xl ring-1 ring-black ring-opacity-5 lg:absolute lg:left-0 lg:h-auto lg:w-auto lg:max-w-none object-cover"
+                             style= {{ color: 'transparent', maxHeight: '100%', maxWidth: '100%' }} src="https://analyticsindiamag.com/wp-content/uploads/2021/11/github-logo-768x373-1.jpeg" alt="NLG"/>
                         </div>
                     </div>
                 </div>
@@ -164,8 +168,8 @@ const ServiceContent = () => {
                     <div className="mt-12 sm:mt-16 lg:mt-0">
                         <div className="-ml-48 pr-6 md:-ml-16 lg:relative lg:m-0 lg:h-full lg:px-0">
                             <img alt="Inbox user interface" loading="lazy" width="647" height="486"
-                                className="w-full rounded-xl shadow-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:right-0 lg:h-full lg:w-auto lg:max-w-none"
-                                style={{ color: 'transparent' }} src="https://www.indiahires.in/wp-content/uploads/2023/11/Remote-Internships.webp" 
+                               className="w-full rounded-xl shadow-2xl ring-1 ring-black ring-opacity-5 lg:absolute lg:left-0 lg:h-auto lg:w-auto lg:max-w-none object-cover"
+                                style={{ color: 'transparent', maxHeight: '100%', maxWidth: '100%' }} src="https://www.indiahires.in/wp-content/uploads/2023/11/Remote-Internships.webp" 
                                 />
                         </div>
                     </div>
