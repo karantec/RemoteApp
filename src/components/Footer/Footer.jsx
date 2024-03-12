@@ -123,7 +123,7 @@ const Footer = () => {
           <ul className="mt-6 space-y-1">
             <li>
               <a
-                className="text-gray-700"
+                className="font-medium text-gray-900 "
                 href="https://www.lets-code.co.in/service"
               >
                 Services
@@ -132,7 +132,7 @@ const Footer = () => {
 
             <li>
               <a
-                className="text-gray-700"
+                className="font-medium text-gray-900 "
                 href="https://www.lets-code.co.in/community"
               >
                 Community
@@ -141,7 +141,7 @@ const Footer = () => {
 
             <li>
               <a
-                className="text-gray-700"
+                className="font-medium text-gray-900 "
                 href="https://www.lets-code.co.in/product"
               >
                 Products
@@ -150,7 +150,7 @@ const Footer = () => {
 
             <li>
               <a
-                className="text-gray-700"
+                className="font-medium text-gray-900 "
                 href="https://www.lets-code.co.in/about"
               >
                About
@@ -165,7 +165,7 @@ const Footer = () => {
           <ul className="mt-6 space-y-1">
             <li>
               <a
-                className="text-gray-700"
+                className="font-medium text-gray-900 "
                 href="#"
               >
                 Account
@@ -207,7 +207,7 @@ const Footer = () => {
           <ul className="mt-6 space-y-1">
             <li>
               <a
-                className="text-gray-700"
+                className="font-medium text-gray-900 "
                 href="#"
               >
                Terms & Condition
@@ -216,7 +216,7 @@ const Footer = () => {
 
             <li>
               <a
-                className="text-gray-700"
+                className="font-medium text-gray-900"
                 href="#"
               >
                 Privacy Policy
@@ -225,7 +225,7 @@ const Footer = () => {
 
             <li>
               <a
-                className="text-gray-700"
+                className="font-medium text-gray-900"
                 href="#"
               >
                 Licensing
@@ -242,7 +242,7 @@ const Footer = () => {
 
         <br />
 
-        Created with
+        Created By &nbsp;
         <a
           href="https://www.lets-code.co.in/about"
           className="text-green-700   text-2xl font-bold underline"

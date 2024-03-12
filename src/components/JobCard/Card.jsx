@@ -95,7 +95,7 @@ const Card = () => {
                         <div key={index} className="w-full sm:w-1/2 md:w-1/2 lg:w-2/4 xl:w-1/4 p-4">
                             <div className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg  shadow-xl transition duration-300 hover:scale-105  dark:border-gray-700">
                                 <h5 className="mb-2 text-2xl font-bold tracking-tight text-blue-600  ">{data.CompanyName}</h5>
-                                <h5 className="mb-2 text-2xl font-bold tracking-tight text-blue-600 ">{data.Roles}</h5>
+                                <h5 className="mb-2 text-1xl font-bold tracking-tight text-blue-600 ">{data.Roles}</h5>
                                 <p className="mb-3   pl-3  bg-gray-300 rounded-lg font-bold text-black  ">{data.Location}</p>
                                 <p className="mb-3   pl-3 bg-gray-300 rounded-lg font-bold text-black  ">{data.Skills}</p>
                                 <p className="mb-3   pl-3 bg-gray-300 rounded-lg font-bold text-black  "> {data.Experience}</p>
