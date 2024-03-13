@@ -60,7 +60,7 @@ const BlogCard = () => {
         <div className="w-full mx-auto space-y-4">
           <h1 className="text-5xl font-bold leading">How to Land Remote Jobs: Tips ?</h1>
 
-          <p className="text-md mt-5 text-white">
+          <p className="text-md mt-5 text-black">
             In recent years, remote work has gained immense popularity, offering individuals the freedom to work from
             anywhere while maintaining productivity. Landing remote jobs requires a combination of strategy, preparation,
             and perseverance. Here a comprehensive guide to help you secure remote employment:

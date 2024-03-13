@@ -1,8 +1,0 @@
-.header-container {
-    background-image: url('image.jpg'); /* Specify the path to your image */
-    background-size: cover; /* Cover the entire container */
-    background-position: center; /* Center the background image */
-    height: 400px;
-    margin-bottom: -2rem; /* Adjust the height as needed */
-    /* You can add more styles such as padding, margin, etc. */
-  }

@@ -12,17 +12,17 @@ const ContactContent = () => {
             <div className="mb-6 max-w-3xl text-center sm:text-center md:mx-auto md:mb-12">
               
                 <h2
-                    className="font-heading mb-4 font-bold tracking-tight text-gray-900  text-3xl sm:text-5xl">
+                    className="font-heading mb-4 font-bold  mt-3 tracking-tight mt- text-gray-900  text-3xl sm:text-5xl">
                     Get in Touch
                 </h2>
-                <p className="mx-auto mt-4 max-w-3xl text-xl text-gray-600 dark:text-slate-400">Contact Us for any query
+                <p className="mx-auto mt-4 max-w-3xl text-xl  text-gray-600 dark:text-slate-400">Contact Us for any query
                 </p>
             </div>
         </div>
         <div className="flex items-stretch justify-center">
             <div className="grid md:grid-cols-2">
                 <div className="h-full pr-6">
-                    <p className="mt-3 mb-12 text-lg text-white ">
+                    <p className="mt-3 mb-12 text-lg text-black ">
                     Join us on our journey to redefine the future of work. Whether you are a freelancer, a small business owner, or part of a large enterprise, LetsRemote is here to support you every step of the way. ut.
                     </p>
                     <ul className="mb-6 md:mb-0">
