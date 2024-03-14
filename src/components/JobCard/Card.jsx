@@ -18,22 +18,26 @@ const Card = () => {
             try {
                 const response = await fetch('https://remotebackend-2.onrender.com/api/v1/getCompany');
                 const userData = await response.json();
-                setData(userData.data);
+    
+                // Sort the data by last entry
+                const sortedData = userData.data.slice().reverse();
+    
+                setData(sortedData);
                 setLoading(false); // Set loading to false when data is fetched
             } catch (error) {
                 console.error('Error fetching user data:', error);
                 setLoading(false); // Set loading to false in case of error
             }
         };
-
+    
         fetchData();
-
+    
         const interval = setInterval(fetchData, 2000);
-
+    
         const unsubscribe = auth.onAuthStateChanged(user => {
             setUser(user);
         });
-
+    
         return () => {
             clearInterval(interval);
             unsubscribe();
@@ -92,14 +96,18 @@ const Card = () => {
                 // Render data when loading is false
                 <div className="flex flex-wrap justify-center">
                     {currentData.map((data, index) => (
-                        <div key={index} className="w-full sm:w-1/2 md:w-1/2 lg:w-2/4 xl:w-1/4 p-4">
+                        <div key={index} className="w-full sm:w-1/2 md:w-1/2 lg:w-1/3  xl:w-1/3 p-4">
                             <div className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg  shadow-xl transition duration-300 hover:scale-105  dark:border-gray-700">
-                                <h5 className="mb-2 text-2xl font-bold tracking-tight text-blue-600  ">{data.CompanyName}</h5>
-                                <h5 className="mb-2 text-1xl font-bold tracking-tight text-blue-600 ">{data.Roles}</h5>
-                                <p className="mb-3   pl-3  bg-gray-300 rounded-lg font-bold text-black  ">{data.Location}</p>
-                                <p className="mb-3   pl-3 bg-gray-300 rounded-lg font-bold text-black  ">{data.Skills}</p>
-                                <p className="mb-3   pl-3 bg-gray-300 rounded-lg font-bold text-black  "> {data.Experience}</p>
-                                <p className="mb-3   pl-3 bg-gray-300 rounded-lg font-bold text-black  "> {data.ExpectedSalary}</p>
+                                <h5 className="mb-2 text-2xl font-bold tracking-tight text-blue-600  "> {data.CompanyName}</h5>
+                                <h5 className="mb-2 text-1xl font-bold tracking-tight  ">
+                                Role : {data.Roles}</h5>
+                                <p className="mb-3   pl-3  bg-gray-300 rounded-lg font-bold text-black   "> <span
+                                className="text-blue-600">Location :</span> {data.Location}</p>
+                                <p className="mb-3   pl-3 bg-gray-300 rounded-lg font-bold text-black  "><span
+                                className='text-blue-600'> Skills :</span> {data.Skills}</p>
+                                <p className="mb-3   pl-3 bg-gray-300 rounded-lg font-bold text-black  "> <span
+                                className='text-blue-600'>Experience :</span> {data.Experience}</p>
+                                <p className="mb-3   pl-3 bg-gray-300 rounded-lg font-bold text-black  "> <span className='text-blue-600'>ExpectedSalary : </span>{data.ExpectedSalary}</p>
                                 <button
                                     className={`inline-flex justify-center items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800`}
                                     onClick={() => handleApply(data.ApplyLink)}
