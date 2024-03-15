@@ -102,7 +102,7 @@ const Card = () => {
                                 <h5 className="mb-2 text-1xl font-bold tracking-tight  ">
                                 Role : {data.Roles}</h5>
                                 <p className="mb-3   pl-3  bg-gray-300 rounded-lg font-bold text-black   "> <span
-                                className="text-blue-600">Location :</span> {data.Location}</p>
+                                className="text-blue-600">JobType :</span> {data.JobType}</p>
                                 <p className="mb-3   pl-3 bg-gray-300 rounded-lg font-bold text-black  "><span
                                 className='text-blue-600'> Skills :</span> {data.Skills}</p>
                                 <p className="mb-3   pl-3 bg-gray-300 rounded-lg font-bold text-black  "> <span
