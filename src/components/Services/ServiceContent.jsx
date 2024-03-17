@@ -25,7 +25,7 @@ const ServiceContent = () => {
             </div>
             <div className="max-w-sm mx-auto">
               <div className="mb-8">
-                <div className="rounded-3xl border border-gray-100 dark:border-gray-700 shadow-2xl shadow-gray-600/10 dark:shadow-none bg-white dark:bg-gray-800 px-8 py-12 sm:px-12 lg:px-8">
+                <div className="rounded-3xl border border-gray-100 dark:border-gray-700 shadow-2xl shadow-gray-600/10 dark:shadow-none bg-white  px-8 py-12 sm:px-12 lg:px-8">
                   <img
                     src="https://cse.noticebard.com/wp-content/uploads/sites/23/2023/05/7-Best-Remote-Internships-for-College-Students.jpg"
                     alt="illustration"
@@ -43,7 +43,7 @@ const ServiceContent = () => {
             </div>
             <div className="max-w-sm mx-auto">
               <div className="mb-8">
-                <div className="rounded-3xl border border-gray-100 dark:border-gray-700 shadow-2xl shadow-gray-600/10 dark:shadow-none bg-white dark:bg-gray-800 px-8 py-12 sm:px-12 lg:px-8">
+                <div className="rounded-3xl border border-gray-100 dark:border-gray-700 shadow-2xl shadow-gray-600/10 dark:shadow-none bg-white  px-8 py-12 sm:px-12 lg:px-8">
                   <img
                     src="resume.png"
                     alt="illustration"
@@ -60,7 +60,7 @@ const ServiceContent = () => {
             </div>
             <div className="max-w-sm mx-auto">
               <div className="mb-8">
-                <div className="rounded-3xl border border-gray-100 dark:border-gray-700 shadow-2xl shadow-gray-600/10 dark:shadow-none bg-white dark:bg-gray-800 px-8 py-12 sm:px-12 lg:px-8">
+                <div className="rounded-3xl border border-gray-100 dark:border-gray-700 shadow-2xl shadow-gray-600/10 dark:shadow-none bg-white  px-8 py-12 sm:px-12 lg:px-8">
                   <img
                     src="portfolio.png"
                     alt="illustration"
@@ -77,7 +77,7 @@ const ServiceContent = () => {
             </div>
             <div className="max-w-sm mx-auto">
               <div className="mb-8">
-                <div className="rounded-3xl border border-gray-100 dark:border-gray-700 shadow-2xl shadow-gray-600/10 dark:shadow-none bg-white dark:bg-gray-800 px-8 py-12 sm:px-12 lg:px-8">
+                <div className="rounded-3xl border border-gray-100 dark:border-gray-700 shadow-2xl shadow-gray-600/10 dark:shadow-none bg-white  px-8 py-12 sm:px-12 lg:px-8">
                   <img
                     src="techjobs.jpg"
                     alt="illustration"
@@ -95,7 +95,7 @@ const ServiceContent = () => {
             </div>
             <div className="max-w-sm mx-auto">
               <div className="mb-8">
-                <div className="rounded-3xl border border-gray-100 dark:border-gray-700 shadow-2xl shadow-gray-600/10 dark:shadow-none bg-white dark:bg-gray-800 px-8 py-12 sm:px-12 lg:px-8">
+                <div className="rounded-3xl border border-gray-100 dark:border-gray-700 shadow-2xl shadow-gray-600/10 dark:shadow-none bg-white  px-8 py-12 sm:px-12 lg:px-8">
                   <img
                     src="github.png"
                     alt="illustration"
