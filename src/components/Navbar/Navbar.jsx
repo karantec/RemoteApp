@@ -44,8 +44,8 @@ const Navbar = () => {
     <div>
       <nav className="bg-white dark:bg-white fixed w-full z-20 top-0 mb-10 border-b border-gray-200">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-          <a href="https://letscodejobs.in/wp-content/uploads/2024/02/cropped-cropped-logo2-3.png" className="flex items-center space-x-3 rtl:space-x-reverse">
-            <img src="https://letscodejobs.in/wp-content/uploads/2024/02/cropped-cropped-logo2-3.png" className="h-8" alt="Flowbite Logo" />
+          <a href="letsremote.png" className="flex items-center space-x-3 rtl:space-x-reverse">
+            <img src="letsremote.png" className="h-10" alt="Flowbite Logo" />
             <span className="self-center text-2xl font-semibold whitespace-nowrap ">Lets Remote</span>
           </a>
           <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
