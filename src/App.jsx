@@ -8,6 +8,8 @@ import About from "./components/About/About";
 import Contact from "./components/Contact/Contact";
 import Service from "./components/Services/Services";
 
+import JobPage from "./components/JobCard/JobPage";
+
 // ScrollToTop component for scrolling to the top when route changes
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -27,14 +29,15 @@ const App = () => {
       {/* Include the ScrollToTop component */}
       <ScrollToTop />
 
-      <Routes  basename="/">
-        <Route  path="/" element={<Home />} />
-        <Route   path="/Login" element={<Login/>}></Route>
-        <Route  path="/About" element={<About/>}></Route>
-        <Route  path="/contact" element={<Contact/>}></Route>
-        <Route  path="/services" element={<Service/>}></Route>
-        <Route   path="/Resource" element={<Resource/>}></Route>
-        <Route   path="/Signup"  element={<Signup/>}></Route>
+      <Routes basename="/">
+        <Route path="/" element={<Home />} />
+        <Route path="/Login" element={<Login />} />
+        <Route path="/About" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/services" element={<Service />} />
+        <Route path="/Resource" element={<Resource />} />
+        <Route path="/Signup" element={<Signup />} />
+        <Route path="/job/:id" element={<JobPage />} /> {/* Corrected 'element' prop */}
       </Routes>
     </div>
   );
