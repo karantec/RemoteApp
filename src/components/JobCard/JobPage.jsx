@@ -49,7 +49,10 @@ const JobPage = () => {
         console.log('User:', user);
     
         if (!user) {
+            const url = window.location.href
             localStorage.setItem('applyLink', applyLink);
+            localStorage.setItem('jobID',url );
+
             navigate(`/signup`);
             return;
         }

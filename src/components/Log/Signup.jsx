@@ -16,6 +16,7 @@ const Signup = () => {
     createUserWithEmailAndPassword(auth, email, password)
       .then(() => {
         toast.success("User Successfully Created");
+
         navigate("/login");
       })
       .catch((error) => {
