@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
 import { auth } from '../../../firebase';
+import parser from "html-react-parser"
 
 const JobPage = () => {
     const { id } = useParams();
@@ -125,7 +126,7 @@ const JobPage = () => {
                         ) : (
                             <>
                                 <h5 className="mb-2 text-xl font-bold tracking-tight text-black">Description</h5>
-                                <p className="mb-3 pl-3 text-black rounded-lg font-bold">{getDescriptionPreview()}</p>
+                                <p className="mb-3 pl-3 text-black rounded-lg font-bold">{parser(jobDetails?.description)}</p>
                                 <button className="text-blue-600 mt-2 focus:outline-none" onClick={toggleShowDescription}>
                                     {showFullDescription ? 'Read Less' : 'Read More'}
                                 </button>
