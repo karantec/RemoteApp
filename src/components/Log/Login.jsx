@@ -19,7 +19,8 @@ const Login = () => {
               toast.success("User Successfully Logged In");
               const applyJobId = localStorage.getItem('jobID');
               if (applyJobId) {
-                const URI = applyJobId.replace("http://localhost:5173/job/","")
+                const webURL= "https://letsremote/" || "http:localhost:5173/job"
+                const URI = applyJobId.replace(`${webURL}/job`,"")
                 navigate(`/job/${URI}`);
               } else {
                   navigate('/'); // Redirect to home page upon successful login
@@ -36,8 +37,9 @@ const Login = () => {
           .then(() => {
               const applyJobId = localStorage.getItem('jobID');
               if (applyJobId) {
+                const webURL= "" || "http:localhost:5173/job"
                   toast.success("User Successfully Logged In with Google");
-                  const URI = applyJobId.replace("http://localhost:5173/job/","")
+                  const URI = applyJobId.replace(`${webURL}/job`,"")
                   navigate(`/job/${URI}`); // Redirect to job details page by job ID
               } else {
                   navigate('/'); // Redirect to home page upon successful login
