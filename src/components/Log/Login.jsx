@@ -18,7 +18,6 @@ const Login = () => {
           .then(() => {
               toast.success("User Successfully Logged In");
               const applyJobId = localStorage.getItem('jobID');
-              console.log(applyJobId)
               if (applyJobId) {
                 const URI = applyJobId.replace("http://localhost:5173/job/","")
                 navigate(`/job/${URI}`);
@@ -39,7 +38,6 @@ const Login = () => {
               if (applyJobId) {
                   toast.success("User Successfully Logged In with Google");
                   const URI = applyJobId.replace("http://localhost:5173/job/","")
-                  console.log(URI)
                   navigate(`/job/${URI}`); // Redirect to job details page by job ID
               } else {
                   navigate('/'); // Redirect to home page upon successful login
